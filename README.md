@@ -1,6 +1,8 @@
 # WordleHelper
 A Wordle Companion
 
+Dictionary taken from [here](https://github.com/dwyl/english-words)
+
 # Example Usage
 ``` 
 Wordle!!    
