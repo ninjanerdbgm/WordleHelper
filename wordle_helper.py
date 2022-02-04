@@ -9,8 +9,8 @@ def load_words():
 def has_repeating_letters(word):
     return len(word) != len(set(word))
 
-def get_five_letter_words(word_array, check_for_repeating_letters):
-    if check_for_repeating_letters:
+def get_five_letter_words(word_array, include_words_with_repeating_letters):
+    if include_words_with_repeating_letters:
         return {word for word in word_array if len(word) == 5}
     else:
         return {word for word in word_array if len(word) == 5 and not has_repeating_letters(word)}
@@ -43,7 +43,7 @@ def get_potential_words(word_array, input, potential_letters, not_containing):
 if __name__ == '__main__':
     # So far, I haven't seen Wordle use a word with repeating letters.
     # In any case, let this be a variable in case that changes in the future.
-    CHECK_FOR_REPEATING_LETTERS = False
+    INCLUDE_WORDS_WITH_REPEATING_LETTERS = False
 
     solved = False
     was_solved = ""
@@ -51,7 +51,7 @@ if __name__ == '__main__':
     print("Wordle!!")
 
     english_words = load_words()
-    potential_words = get_five_letter_words(english_words, CHECK_FOR_REPEATING_LETTERS)
+    potential_words = get_five_letter_words(english_words, INCLUDE_WORDS_WITH_REPEATING_LETTERS)
     words_without_aeiou = words_without_main_vowels(potential_words)
     possible_words_after_two_rounds_of_wordle = words_not_containing_letters(words_without_aeiou, "tnscl")
 
