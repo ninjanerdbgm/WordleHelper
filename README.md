@@ -1,7 +1,7 @@
 # WordleHelper
 A Wordle Companion
 
-Dictionary taken from [here](https://github.com/dwyl/english-words)
+The dictionary used in this script can be found [here](https://github.com/dwyl/english-words) (grab the json version)
 
 # Example Usage
 ``` 
